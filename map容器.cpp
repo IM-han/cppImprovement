@@ -91,14 +91,61 @@ void test04() {
 	//m.clear();
 	m.erase(m.begin(), m.end());
 	printMap(m);
+
+
 }
 
+//查找和统计
+void test05() {
+	map<int, int>m;
+	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(2, 20));
+	m.insert(pair<int, int>(3, 30));
+
+	//查找
+	map<int, int>::iterator pos = m.find(34);
+	if (pos != m.end()) {
+		cout << "key = " << (*pos).first << " value = " << (*pos).second << endl;
+	}
+	else {
+		cout << "未找到该数据" << endl;
+	}
+
+	//统计
+	int num = m.count(2);
+	cout << "num = " << num << endl;
+}
+
+//排序
+class MyCompare {
+public:
+	bool operator()(int v1, int v2)const {
+		return v1 > v2;
+	}
+};
+
+void test06() {
+
+	map<int, int, MyCompare> m;
+
+	m.insert(make_pair(1, 10));
+	m.insert(make_pair(2, 20));
+	m.insert(make_pair(3, 30));
+	m.insert(make_pair(4, 2));
+	m.insert(make_pair(2, 40));
+
+	for (map<int, int, MyCompare>::iterator it = m.begin(); it != m.end(); it++) {
+		cout << "key: " << it->first << " value: " << it->second << endl;
+	}
+}
 
 int main() {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	//test05();
+	test06();
 
 	system("pause");
 	return 0;
