@@ -156,5 +156,11 @@
     <ClCompile Include="常用算法--拷贝和排序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="常用算法--算术生成.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="常用算法--集合.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
